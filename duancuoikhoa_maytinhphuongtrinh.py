@@ -36,12 +36,12 @@ def ptbac1():
             so_b1 = float(b1.value)
             if so_a1 == 0:
                 if so_b1 != 0:
-                    ketqua.value = f"Vô nghiệm\n\nPhương trình {so_a1} + {so_b1} = {0}\nCó {so_a1} = 0 và {so_b1} khác 0\n===> Phương trình Vô nghiệm" 
+                    ketqua.value = f"Vô nghiệm\n\nPhương trình {so_a1} + {so_b1} = {0}\nCó a = {so_a1} = 0 và b = {so_b1} khác 0\n===> Phương trình Vô nghiệm" 
                 else:
-                    ketqua.value = f"Vô số nghiệm\n\nPhương trình {so_a1} + {so_b1} = {0}\nCó {so_a1} = 0 và {so_b1} = 0\n===> Phương trình Vô số nghiệm" 
+                    ketqua.value = f"Vô số nghiệm\n\nPhương trình {so_a1} + {so_b1} = {0}\nCó a = {so_a1} = 0 và b = {so_b1} = 0\n===> Phương trình Vô số nghiệm" 
             else:
                 x = -so_b1 / so_a1
-                ketqua.value = f"x = {x}\n\nPhương trình {so_a1} + {so_b1} = {0}\nCó {so_a1} khác 0\n===> Phương trình có nghiệm:\n-{so_b1} : {so_a1} = {x}"
+                ketqua.value = f"x = {x}\n\nPhương trình {so_a1} + {so_b1} = {0}\nCó a = {so_a1} khác 0\n===> Phương trình có nghiệm:\n-b : a = -{so_b1} : {so_a1} = {x}"
         except:
             ketqua.value = "Vui lòng chỉ nhập số!"
     PushButton(windown, command=tinhtoan, text="Tính toán")
@@ -57,23 +57,23 @@ def ptbac2():
             if so_a == 0:
                 if so_b == 0:       
                     if so_c != 0:
-                        ketqua2.value = f"Vô nghiệm\n\nPhương trình {so_a}^2+{so_b}x + {so_c} = {0}\nCó {so_a} = 0 và {so_b} = 0 và {so_c} khác 0\n===>Phương trình vô nghiệm"
+                        ketqua2.value = f"Vô nghiệm\n\nPhương trình {so_a}^2+{so_b}x + {so_c} = {0}\nCó a = {so_a} = 0 và b = {so_b} = 0 và c = {so_c} khác 0\n===>Phương trình vô nghiệm"
                     else:
-                        ketqua2.value = f"Vô số nghiệm\n\nPhương trình {so_a}^2+{so_b}x + {so_c} = {0}\nCó {so_a} = 0 và {so_b} = 0 và {so_c} = 0\n===>Phương trình vô số nghiệm"
+                        ketqua2.value = f"Vô số nghiệm\n\nPhương trình {so_a}^2+{so_b}x + {so_c} = {0}\nCó a = {so_a} = 0 và b = {so_b} = 0 và c = {so_c} = 0\n===>Phương trình vô số nghiệm"
                 else:
                     x = -so_c / so_b
-                    ketqua2.value = f"x = {x}\n\nPhương trình {so_a}^2+{so_b}x + {so_c} = {0}\nCó {so_a} = 0 và {so_b} khác 0\n===>Phương trình có nghiệm:\n-{so_c} : {so_b} = {x}"
+                    ketqua2.value = f"x = {x}\n\nPhương trình {so_a}^2+{so_b}x + {so_c} = {0}\nCó a = {so_a} = 0 và b = {so_b} khác 0\n===>Phương trình có nghiệm:\n-c : b = -{so_c} : {so_b} = {x}"
             else:          
                 delta = so_b**2 - 4*so_a*so_c    
                 if delta < 0:     
-                    ketqua2.value = f"Vô nghiệm\n\nPhương trình {so_a}^2+{so_b}x + {so_c} = {0}\nCó {so_a} khác 0\n===> Delta = {so_b}^2 - 4{so_a}{so_c} = {delta}\nVì {delta} < 0\n===>Phương trình vô nghiệm"
+                    ketqua2.value = f"Vô nghiệm\n\nPhương trình {so_a}^2+{so_b}x + {so_c} = {0}\nCó a = {so_a} khác 0\n===> Delta = b^2 - 4ac\n= {so_b}^2 - 4{so_a}{so_c} = {delta}\nVì {delta} < 0\n===>Phương trình vô nghiệm"
                 elif delta == 0:      
                     x = -so_b / (2 * so_a)
-                    ketqua2.value = f"x1 = x2 = {x}\n\nPhương trình {so_a}^2+{so_b}x + {so_c} = {0}\nCó {so_a} khác 0\n===> Delta = {so_b}^2 - 4{so_a}{so_c} = {delta}\nVì {delta} = 0\n===>Phương trình có nghiệm kép\nx1 = x2 = -{so_b} : 2{so_a} = {x}"
+                    ketqua2.value = f"x1 = x2 = {x}\n\nPhương trình {so_a}^2+{so_b}x + {so_c} = {0}\nCó a = {so_a} khác 0\n===> Delta = b^2 - 4ac\n= {so_b}^2 - 4{so_a}{so_c} = {delta}\nVì {delta} = 0\n===>Phương trình có nghiệm kép\nx1 = x2 \n= -b : 2a = -{so_b} : 2{so_a} = {x}"
                 else:        
                     x1 = (-so_b + math.sqrt(delta)) / (2 * so_a)
                     x2 = (-so_b - math.sqrt(delta)) / (2 * so_a)
-                    ketqua2.value = f"x1 = {x1}\nx2 = {x2}\n\nPhương trình {so_a}^2+{so_b}x + {so_c} = {0}\nCó {so_a} khác 0\n===> Delta = {so_b}^2 - 4{so_a}{so_c} = {delta}\nVì {delta} > 0\n===>Phương trình có 2 nghiệm x1 và x2\nx1 = -{so_b} + căn bậc hai {delta} : 2{so_a} = {x1}\nx2 = -{so_b} - căn bậc hai {delta} : 2{so_a} = {x2}\n===> Phương trình có 2 nghiệm:\nx1 = {x1}\nx2 = {x2}"
+                    ketqua2.value = f"x1 = {x1}\nx2 = {x2}\n\nPhương trình {so_a}^2+{so_b}x + {so_c} = {0}\nCó a = {so_a} khác 0\n===> Delta = b^2 - 4ac\n= {so_b}^2 - 4{so_a}{so_c} = {delta}\nVì {delta} > 0\n===>Phương trình có 2 nghiệm x1 và x2\nx1 = ( -b + căn bậc hai delta ) : 2a\n= ( -{so_b} + căn bậc hai {delta}) : 2{so_a} = {x1}\nx2 = ( -b - căn bậc hai delta ) : 2a\n= ( -{so_b} - căn bậc hai {delta} ) : 2{so_a} = {x2}\n===> Phương trình có 2 nghiệm:\nx1 = {x1}\nx2 = {x2}"
         except:
             ketqua2.value = "Vui lòng chỉ nhập số!"
     PushButton(windown2, command=tinhtoan1, text="Tính toán")
